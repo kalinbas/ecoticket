@@ -1,7 +1,8 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "mx.ecoticket.app",
+  "description": "App para EcoTicket",
+  "author": "Bastian Kälin @ Ecoticket Team",
+  "homepage": "http://ecoticket.mx",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
@@ -44,8 +45,9 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "cordova-plugin-camera",
-    "ionic-plugin-keyboard"
+    "ionic-plugin-keyboard",
+    "cordova-plugin-headercolor",
+    "phonegap-plugin-barcodescanner"
   ],
-  "cordovaPlatforms": [],
-  "description": "EcoTicket: An Ionic project"
+  "cordovaPlatforms": []  
 }
