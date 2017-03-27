@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Agregar recibo manual
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <!--
+  <b>Escanear codigo del recibo</b>
+  <button ion-button block icon-left (click)="scanQR()">
+    <ion-icon name="qr-scanner"></ion-icon>
+      Escanear código QR
+  </button>
+  -->
+
+  <div style="text-align: center;margin-top:30px; margin-bottom: 30px;">
+    <button ion-button icon-left (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+        Tomar foto del recibo
+    </button>
+  </div>
+  <img *ngIf="form.image" [src]="form.image" style="width:100%" />
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Fecha del recibo</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="form.fecha"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Hora del recibo</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="form.hora"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Tienda</ion-label>
+      <ion-input type="text"  [(ngModel)]="form.lugar"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Monto</ion-label>
+      <ion-input type="number" [(ngModel)]="form.monto"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button style="height: 60px;margin-top:50px;" ion-button block (click)="save()" [disabled]="!form.fecha || !form.hora || !form.lugar || !form.monto">   
+      Guardar
+  </button>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Recibo de {{ pago.tienda.nombre }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div style="margin:15px;padding:25px;border:3px solid black;">
+    <div style="text-align: center;">
+      <h2><b>{{ pago.tienda.nombre }}</b></h2>
+      <p>{{ pago.tienda.direccion }}<br />Tel. {{ pago.tienda.telefono }}</p>
+      
+    </div>
+    <p>{{ pago.fecha.millis | date:'MM/dd/yyyy HH:mm' }}</p>
+    <table style="font-size: 16px;width:100%;">
+      <tr *ngFor="let prod of pago.productos">
+        <td style="width:50px;">{{ prod.cantidad }}</td>
+        <td style="width:200px;">{{ prod.nombre }}</td>
+        <td style="text-align: right;">${{ prod.costo | number : '1.2-2' }}</td>
+      </tr>
+      <tr style="font-size: 18px;">
+        <td style="padding-top:20px;"></td>
+        <td style="padding-top:20px;"><b>Total</b></td>
+        <td style="text-align: right;padding-top:20px;"><b>${{ pago.total | number : '1.2-2' }}</b></td>
+      </tr>
+    </table>
+
+    <h4 style="font-size:14px;margin-top:50px;"><b>Garantía</b></h4>
+    <p style="font-size:12px;">La empresa {{ pago.tienda.nombre }} otorga a los consumidores UNA GARANTIA consistente en aceptar el cambio o la devolución de sus productos en el plazo máximo de 60 días contados a partir de la fecha de compra sólo si los mismos presentan defectos o vicios ocultos que los hagan impropios para los usos a los que habitualmente se destinen o disminuyan su calidad o la posibilidad de uso o no ofrezca la seguridad que daba su naturaleza normalmente se espera de ella y de su uso razonable.</p>
+  </div>
+</ion-content>

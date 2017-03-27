@@ -1,0 +1,10 @@
+{
+  "name": "EcoTicket",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [{
+    "path": "/API",
+    "proxyUrl": "http://ecoticket.mx/API"
+  }]
+}

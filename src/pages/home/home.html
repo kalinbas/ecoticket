@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div style="text-align: center;margin-top:30px;">
+    <img [src]="barcodeUrl" style="display:inline-block;width:50%;border:8px solid #363748;" />
+    <h2>{{ user.name }}</h2>
+  </div>
+
+
+  <div style="width:100%;height:30px;background-color:#363748;margin-top:30px;"></div>
+  <div *ngIf="pagos && pagos.length > 0" style="margin-top:30px;">
+    <div style="text-align: center;color:#666;font-size: 16px;">Recientes</div>
+    <ion-list>
+      <button ion-item *ngFor="let pago of pagos" (click)="openDetail(pago)">
+        <list-item [item]="pago"></list-item>
+      </button>
+    </ion-list>
+  </div>
+  <div *ngIf="!pagos || pagos.length == 0">
+    <p style="text-align: center; font-size: 12px;">
+      Para empezar a coleccionar tus recibos pregunta por EcoTicket en tu tienda o escanea uno de tus recibos.
+    </p>
+  </div>
+</ion-content>

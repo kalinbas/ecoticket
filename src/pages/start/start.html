@@ -1,0 +1,32 @@
+<ion-navbar has-header="false" hide-nav-bar="true">
+
+</ion-navbar>
+
+
+
+<ion-content>
+  <img src="./assets/images/logo.png" style="width:35%;display:block;margin-left:auto;margin-right:auto;margin-top:50px;" />
+  <div style="text-align: center;margin-bottom:60px;">
+    <h2>¡Comencemos!</h2>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre</ion-label>
+      <ion-input [(ngModel)]="form.name" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Mail</ion-label>
+      <ion-input [(ngModel)]="form.email" type="email" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Edad</ion-label>
+      <ion-select [(ngModel)]="form.age" cancelText="Cancelar" okText="OK">
+        <ion-option *ngFor="let nr of ages" [value]="nr">{{ nr }}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button style="height: 60px;margin-top:50px;" ion-button block (click)="register()" [disabled]="!form.name || !form.email || !form.age">Entrar</button>
+
+</ion-content>
